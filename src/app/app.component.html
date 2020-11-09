@@ -1,0 +1,15 @@
+
+<div class="content">
+  <div class="wrapper">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+      <table>
+        <ng-container *cdkVirtualFor="let geojson of geojsons$ | async">
+          <tr>
+            <td><svg [fromGeoJson]="geojson"></svg><td>
+            <td>{{ geojson.properties['name'] }}<td>
+          </tr>
+        </ng-container>
+      </table>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
